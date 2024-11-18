@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f1f1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .calculator {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: 10px;
+      }
+      .display {
+        background-color: #fff;
+        border: 2px solid #000;
+        border-radius: 10px;
+        padding: 20px;
+        font-size: 24px;
+        text-align: right;
+        height: 50px;
+        display: flex;
+        align-items: center;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(4, 100px);
+        gap: 10px;
+      }
+      button {
+        border: 3px solid black;
+        background-color: white;
+        border-radius: 20px;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: grey;
+      }
+      .button-operator {
+        background-color: rgb(201, 133, 7);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <input type="text" placeholder="0" id="result" class="display" readonly />
+      <div class="container">
+        <button onclick="display_content('9')" type="button">9</button>
+        <button onclick="display_content('8')" type="button">8</button>
+        <button onclick="display_content('7')" type="button">7</button>
+        <button
+          onclick="display_content('+')"
+          type="button"
+          class="button-operator"
+        >
+          +
+        </button>
+        <button onclick="display_content('6')" type="button">6</button>
+        <button onclick="display_content('5')" type="button">5</button>
+        <button onclick="display_content('4')" type="button">4</button>
+        <button
+          onclick="display_content('-')"
+          type="button"
+          class="button-operator"
+        >
+          -
+        </button>
+        <button onclick="display_content('3')" type="button">3</button>
+        <button onclick="display_content('2')" type="button">2</button>
+        <button onclick="display_content('1')" type="button">1</button>
+        <button
+          onclick="display_content('*')"
+          type="button"
+          class="button-operator"
+        >
+          *
+        </button>
+        <button onclick="display_content('0')" type="button">0</button>
+        <button
+          onclick="display_content('/')"
+          type="button"
+          class="button-operator"
+        >
+          /
+        </button>
+        <button onclick="disp_clear()" type="button" class="button-operator">
+          AC
+        </button>
+        <button onclick="calc_output()" type="button" class="button-operator">
+          =
+        </button>
+        <button
+          onclick="removeLastDigit()"
+          type="button"
+          class="button-operator"
+        >
+          Del
+        </button>
+      </div>
+    </div>
+  </body>
+  <script src="./main.js"></script>
+</html>
